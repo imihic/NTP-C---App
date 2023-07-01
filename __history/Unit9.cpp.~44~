@@ -1,0 +1,313 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <vector>
+#include "Unit10.h"
+#pragma hdrstop
+
+#include "Unit9.h"
+#include "Unit11.h"
+#include "Unit11.cpp"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TAnketeAdminForm *AnketeAdminForm;
+std::vector <Anketa> anketeGlobal;
+
+//---------------------------------------------------------------------------
+__fastcall TAnketeAdminForm::TAnketeAdminForm(TComponent* Owner)
+    : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TAnketeAdminForm::FormCreate(TObject *Sender)
+{
+				  tKorisnici->Filtered = false;
+                  tKorisnici->Filter = "LOGIRAN = true";
+                  tKorisnici->Filtered = true;
+
+                   ListView1->Items->Clear();
+                   for(int i = 0; i < tKorisnici->RecordCount; i++){
+                           ListView1->Items->Add();
+                           ListView1->Items->Item[i]->Indent = -1;
+                           ListView1->Items->Item[i]->ImageIndex = -1;
+                           ListView1->Items->Item[i]->Caption = i + 1;
+                           ListView1->Items->Item[i]->SubItems->Add(tKorisnici->FieldByName("naziv")->AsString);
+                           ListView1->Items->Item[i]->SubItems->Add("NE");
+                           ListView1->Items->Item[i]->SubItemImages[1]=0;
+                           ListView1->Items->Item[i]->SubItems->Add("NE");
+                           ListView1->Items->Item[i]->SubItemImages[2]=0;
+                           ListView1->Items->Item[i]->SubItems->Add("NE");
+                           ListView1->Items->Item[i]->SubItemImages[3]=0;
+                           tKorisnici->Next();
+                   }
+}
+//---------------------------------------------------------------------------
+void __fastcall TAnketeAdminForm::btnAzurirajOznacenuAnketuClick(TObject *Sender)
+
+{
+     int last = ListView1->Items->Count-1;
+
+     if(ListView2->ItemIndex == -1){
+           ShowMessage("Niste odabrali nijednu anketu!");
+           return;
+     }
+
+     ListView2->Items->Item[ListView2->ItemIndex]->SubItems->Strings[0] = (InputBox(L"Ažuriranje pitanja",
+		 L"Upišite željeno pitanje:", ListView2->Items->Item[ListView2->ItemIndex]->SubItems->Strings[0]));
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::btnKreirajNovuAnketuClick(TObject *Sender)
+{
+
+
+	 FormNovaAnketa = new TFormNovaAnketa(this);
+
+	 if(FormNovaAnketa->ShowModal() == mrOk){
+
+             int brojPitanja = FormNovaAnketa->brojPitanja;
+
+             std::vector<Pitanje> pitanja;
+
+             Pitanje pitanje1(
+                   FormNovaAnketa->pitanje1.c_str(),
+                   FormNovaAnketa->slobodanOdgovor,
+                   FormNovaAnketa->ljestvicaOdgovor,
+                   FormNovaAnketa->daNeOdgovor
+             );
+             pitanja.push_back(pitanje1);
+
+             Pitanje pitanje2(
+                   FormNovaAnketa->pitanje2.c_str(),
+                   FormNovaAnketa->slobodanOdgovor,
+                   FormNovaAnketa->ljestvicaOdgovor,
+                   FormNovaAnketa->daNeOdgovor
+             );
+             pitanja.push_back(pitanje2);
+
+             Pitanje pitanje3(
+                   FormNovaAnketa->pitanje3.c_str(),
+                   FormNovaAnketa->slobodanOdgovor,
+                   FormNovaAnketa->ljestvicaOdgovor,
+                   FormNovaAnketa->daNeOdgovor
+             );
+             pitanja.push_back(pitanje3);
+
+             Pitanje pitanje4(
+                   FormNovaAnketa->pitanje4.c_str(),
+                   FormNovaAnketa->slobodanOdgovor,
+                   FormNovaAnketa->ljestvicaOdgovor,
+                   FormNovaAnketa->daNeOdgovor
+             );
+             pitanja.push_back(pitanje4);
+
+			 Pitanje pitanje5(
+				   FormNovaAnketa->pitanje5.c_str(),
+                   FormNovaAnketa->slobodanOdgovor,
+				   FormNovaAnketa->ljestvicaOdgovor,
+				   FormNovaAnketa->daNeOdgovor
+			 );
+			 pitanja.push_back(pitanje5);
+
+			 std::array<Pitanje, 5> pitanjaArray{ {pitanje1, pitanje2, pitanje3, pitanje4, pitanje5} };
+			 Anketa novaAnketa(FormNovaAnketa->naslovAnkete.c_str(), anketeGlobal.size()+1, pitanjaArray);
+
+			 anketeGlobal.push_back(novaAnketa);
+			 ListView2->Items->Clear();
+			 ListView3->Items->Clear();
+			 int lastPitanje = 0;
+
+			 for(Anketa i : anketeGlobal) {
+				  TListItem *Item = ListView2->Items->Add();
+				  int redni = i.redniBroj;
+				  ListView2->Items->Item[redni-1]->Caption = IntToStr(redni);
+				  ListView2->Items->Item[redni-1]->SubItems->Add(i.nazivAnkete);
+
+
+				  for (Pitanje p : pitanja)
+					{
+
+						ListView3->Items->Add();
+ 						ListView3->Items->Item[lastPitanje]->Caption = IntToStr(lastPitanje+1);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.pitanje);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.slobodanOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.ljestvicaOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.daNeOdgovor);
+						lastPitanje++;
+					}
+
+			 }
+
+
+
+
+	 } else {
+			ShowMessage("Došlo je do greške u radu s aplikacijom");
+     }
+
+     delete FormNovaAnketa;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::btnObrisiOznacenuAnketuClick(TObject *Sender)
+{
+	 int indexToErase = ListView2->ItemIndex;
+	 anketeGlobal.erase(anketeGlobal.begin()+indexToErase);
+
+	 ListView2->Items->Clear();
+	 ListView3->Items->Clear();
+	 int lastPitanje = 0;
+
+	 for(Anketa i : anketeGlobal) {
+				  TListItem *Item = ListView2->Items->Add();
+				  int redni = i.redniBroj;
+				  ListView2->Items->Item[redni-1]->Caption = IntToStr(redni);
+				  ListView2->Items->Item[redni-1]->SubItems->Add(i.nazivAnkete);
+
+
+				  for (Pitanje p : i.pitanja)
+					{
+
+						ListView3->Items->Add();
+						ListView3->Items->Item[lastPitanje]->Caption = IntToStr(lastPitanje+1);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.pitanje);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.slobodanOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.ljestvicaOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.daNeOdgovor);
+						lastPitanje++;
+					}
+
+	 }
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::btnObrisiSveAnketeClick(TObject *Sender)
+{
+	anketeGlobal.clear();
+	ListView2->Clear();
+	ListView3->Items->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::Button1Click(TObject *Sender)
+{
+
+     TFileStream* streamAnkete;
+     if(FileOpenDialog1->Execute()){
+
+		if(FileExists(FileOpenDialog1->FileName)){
+			try {
+				Header header;
+
+
+                streamAnkete = new TFileStream(FileOpenDialog1->FileName, fmCreate);
+
+                streamAnkete->Write(&header, sizeof(Header));
+
+				for(Anketa i : anketeGlobal) {
+					streamAnkete->Write(&i, sizeof(Anketa));
+                    streamAnkete.
+				 }
+
+
+
+
+
+
+            } __finally {
+                // oslobodi TFileStream
+                streamAnkete->Free();
+            }
+
+        }
+     }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TAnketeAdminForm::Button3Click(TObject *Sender)
+{
+     if(FileOpenDialog1->Execute()){
+          if(FileExists(FileOpenDialog1->FileName)){
+
+			TFileStream *streamAnkete = new TFileStream(FileOpenDialog1->FileName, fmCreate);
+
+            try {
+                Header header;
+				streamAnkete->Read(&header, sizeof(Header));
+
+                if(UnicodeString(header.naziv) != "anketa")
+                {
+					ShowMessage("Pogrešan format!");
+                    return;
+                } else if(header.verzija != 1.0) {
+					ShowMessage("Pogrešna verzija binarne datoteke!");
+                    return;
+                } else if(UnicodeString(header.autor) != "imihic206") {
+					ShowMessage("Datoteka je sumnjivog izvora!");
+                    return;
+                }
+
+				Anketa anketa;
+				int brojAnketa = (streamAnkete->Size - sizeof(Header)) / sizeof(Anketa);
+
+				for(int i = 0; i < brojAnketa; i++){
+						 streamAnkete->Read(&anketa, sizeof(Anketa));
+						 anketeGlobal.push_back(anketa);
+				}
+
+                ListView2->Items->Clear();
+				ListView3->Items->Clear();
+				int lastPitanje = 0;
+                for(Anketa i : anketeGlobal) {
+				  TListItem *Item = ListView2->Items->Add();
+				  int redni = i.redniBroj;
+				  ListView2->Items->Item[redni-1]->Caption = IntToStr(redni);
+				  ListView2->Items->Item[redni-1]->SubItems->Add(i.nazivAnkete);
+
+
+				  for (Pitanje p : i.pitanja)
+					{
+
+						ListView3->Items->Add();
+						ListView3->Items->Item[lastPitanje]->Caption = IntToStr(lastPitanje+1);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.pitanje);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.slobodanOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.ljestvicaOdgovor);
+						ListView3->Items->Item[lastPitanje]->SubItems->Add(p.daNeOdgovor);
+						lastPitanje++;
+					}
+
+				}
+			} __finally {
+                streamAnkete->Free();
+            }
+
+        }
+
+     } else {
+                   MessageDlg("Datoteka" + ExtractFileName(FileOpenDialog1->FileName) + " ne postoji!", mtError, TMsgDlgButtons() << mbOK, 0);
+     }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::CategoryButtons1Categories0Items0Click(TObject *Sender)
+
+{
+     Panel1->Visible = false;
+     Panel2->Visible = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TAnketeAdminForm::CategoryButtons1Categories0Items1Click(TObject *Sender)
+
+{
+     Panel1->Visible = true;
+     Panel2->Visible = false;
+}
+//---------------------------------------------------------------------------
+

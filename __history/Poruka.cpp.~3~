@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Poruka.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+
+
+void Poruka(UnicodeString kor, UnicodeString sadrzaj) {
+	this->sifraAkcije = "PK01";
+	this->korisnik = kor;
+	this->sadrzaj = sadrzaj;
+	this->korisnikSaljeDatoteku = false;
+
+}
+void Poruka(UnicodeString kor, TMemoryStream file){
+	this->sifraAkcije = "PK01";
+	this->korisnik = kor;
+	this->datoteka = file;
+	this->korisnikSaljeDatoteku = false;
+}
+

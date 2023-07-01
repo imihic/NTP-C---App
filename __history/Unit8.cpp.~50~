@@ -1,0 +1,85 @@
+// ---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "Unit8.h"
+#include "Korisnik.h"
+#include <System.Threading.hpp>
+
+// ---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TPodrskaForm *PodrskaForm;
+CRITICAL_SECTION criticalSection;
+_di_IFuture__1<String> future;
+
+// ---------------------------------------------------------------------------
+__fastcall TPodrskaForm::TPodrskaForm(TComponent* Owner) : TForm(Owner) {
+
+}
+// ---------------------------------------------------------------------------
+
+void __fastcall TPodrskaForm::IdTCPClient1Connected(TObject *Sender) {
+	IdTCPClient1->Socket->WriteLn("username: '" + Korisnik::GetInstance().getUserName() + "' connected!");
+}
+
+// ---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TPodrskaForm::checkForResponse(TObject *Sender)
+{
+	future = TTask::Future<UnicodeString>([]() -> UnicodeString {
+
+		if(IdTCPClient1->Socket->InputBufferIsEmpty()) {
+			if(IdTCPClient1->Socket->CheckForDataOnSource(30)){
+				UnicodeString response = IdTCPClient1->Socket->ReadLn();
+				return response;
+
+			}
+
+		}
+	}
+
+		//moramo sinkronizirati worker thread s main threadom
+		TThread::Synchronize(TThread::CurrentThread, [&](){
+			Memo1->Lines->Add(future->Value);
+		});
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPodrskaForm::FormShow(TObject *Sender)
+{
+	Timer1->Enabled = true;
+	IdTCPClient1->Connect();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPodrskaForm::FormCreate(TObject *Sender)
+{
+	//InitializeCriticalSection(&criticalSection);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPodrskaForm::FormDestroy(TObject *Sender)
+{
+	//DeleteCriticalSection(&criticalSection);
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TPodrskaForm::Button1Click(TObject *Sender)
+{
+	IdTCPClient1->Socket->WriteLn(Edit1->Text);
+    Timer1->Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TPodrskaForm::Edit1Click(TObject *Sender)
+{
+    Timer1->Enabled = false;
+}
+//---------------------------------------------------------------------------
+

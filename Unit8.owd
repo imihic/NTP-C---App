@@ -1,0 +1,21 @@
+{
+  "Version": "2",
+  "Name": "PodrskaForm",
+  "*": [
+    {
+      "X": 256,
+      "Name": "ALDSAudioIn1",
+      "Type": "Component",
+      "Y": 256
+    },
+    {
+      "X": 480,
+      "Name": "ALDSAudioLogger1",
+      "Type": "Component",
+      "Y": 432
+    }
+  ],
+  "Type": "Diagram",
+  "Content": "OpenWire Diagram",
+  "Product": "Hosted Editor"
+}

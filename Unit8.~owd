@@ -1,0 +1,27 @@
+{
+  "Version": "2",
+  "Name": "PodrskaForm",
+  "*": [
+    {
+      "X": 256,
+      "Name": "ALAudioIn1",
+      "Type": "Component",
+      "Y": 272
+    },
+    {
+      "X": 464,
+      "Name": "ALAudioOut1",
+      "Type": "Component",
+      "Y": 256
+    },
+    {
+      "X": 672,
+      "Name": "ALOggLogger1",
+      "Type": "Component",
+      "Y": 384
+    }
+  ],
+  "Type": "Diagram",
+  "Content": "OpenWire Diagram",
+  "Product": "Hosted Editor"
+}

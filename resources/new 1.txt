@@ -1,0 +1,35 @@
+{
+	"primatelji": {
+		"popis": [
+			{
+				"naziv": "Ivo Ivić",
+          		"adresa: "Blejburških žrtava 44",
+          		"mjesto: "Mostar",
+              	"drzava": "Bosna i Hercegovina",
+          		"račun: "HR526212542124",
+          		"telefon: "0977285193",
+          		"email: "ivo.ivic@gmail.com"
+			},
+			{
+				"naziv": "Andrija Andric",
+				"adresa": "Ulica dr. Ante Pavlovića",
+				"mjesto": "Zagreb",
+				"drzava": "Republika Hrvatska",
+				"račun": "HR6712366671623",
+				"iznos": "4000.00",
+				"telefon: "0977115193",
+          		"email: "andrija.andrijc@eronet.com"
+			},
+			{
+				"naziv": "Andrija Andric",
+				"adresa": "Ulica dr. Ante Pavlovića",
+				"mjesto": "Zagreb",
+				"drzava": "Republika Hrvatska",
+				"račun": "HR6712366671623",
+				"iznos": "4000.00",
+				"telefon: "0977115193",
+          		"email: "andrija.andrijc@eronet.hr"
+			}
+		]
+	}
+}

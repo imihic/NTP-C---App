@@ -1,0 +1,116 @@
+<nalozi>
+	<nalog>
+		<primatelj>Andrija Andric</primatelj>
+		<adresaPrimatelja>Ulica dr. Ante Pavlovića</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalog>
+	<nalog>
+		<primatelj>Andrija Andric</primatelj>
+		<adresaPrimatelja>Ulica dr. Ante Pavlovića</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalog>
+	<nalog>
+		<primatelj>Andrija Andric</primatelj>
+		<adresaPrimatelja>Ulica dr. Ante Pavlovića</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalog>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>Zdenko Kršžanski</primatelj>
+		<adresaPrimatelja>Savski Gaj XII put 7a</adresaPrimatelja>
+		<mjestoPrimatelja>Zagreb</mjestoPrimatelja>
+		<drzavaPrimatelja>Republika Hrvatska</drzavaPrimatelja>
+		<racunPrimatelja>HR6712366671623</racunPrimatelja>
+		<iznos>4000.00</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>01-1234-1243</pozivNaBroj>
+		<svrhaDoznake>Pozajmica</svrhaDoznake>
+	</nalogUJP>
+	<nalogUJP>
+		<primatelj>asd</primatelj>
+		<adresaPrimatelja>asd</adresaPrimatelja>
+		<mjestoPrimatelja>asd</mjestoPrimatelja>
+		<drzavaPrimatelja>asd</drzavaPrimatelja>
+		<racunPrimatelja>1232312312</racunPrimatelja>
+		<iznos>asd</iznos>
+		<vrstaPrihoda>111</vrstaPrihoda>
+		<sifraOpcine>1</sifraOpcine>
+		<pozivNaBroj>asd</pozivNaBroj>
+		<svrhaDoznake>asd</svrhaDoznake>
+	</nalogUJP>
+	<nalog><primatelj>asd</primatelj><adresaPrimatelja>asd</adresaPrimatelja><mjestoPrimatelja>asd</mjestoPrimatelja><drzavaPrimatelja>asd</drzavaPrimatelja><racunPrimatelja>asd</racunPrimatelja><iznos>asdasd</iznos><pozivNaBroj>asd</pozivNaBroj><svrhaDoznake>asd</svrhaDoznake></nalog></nalozi>

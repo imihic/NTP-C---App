@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#ifndef HomeH
+#define HomeH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+//---------------------------------------------------------------------------
+class TSocketServer : public TForm
+{
+__published:	// IDE-managed Components
+	TListView *ListView1;
+	TListView *ListView2;
+	TCheckBox *CheckBox1;
+	TLabel *Label11;
+	TLabel *Label1;
+	TButton *Button1;
+	TListView *ListView3;
+	TLabel *Label2;
+	TButton *Button2;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TSocketServer(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TSocketServer *SocketServer;
+//---------------------------------------------------------------------------
+#endif

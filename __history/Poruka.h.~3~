@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#ifndef PorukaH
+#define PorukaH
+//---------------------------------------------------------------------------
+#endif
+#include <vcl.h>
+
+
+class Poruka {
+	UnicodeString sifraAkcije;
+	UnicodeString korisnik;
+	UnicodeString sadrzaj;
+	TMemoryStream datoteka;
+	bool korisnikSaljeDatoteku;
+
+	Poruka(UnicodeString kor, UnicodeString sadrzaj);
+	Poruka(UnicodeString kor, TMemoryStream file);
+
+};
+
+

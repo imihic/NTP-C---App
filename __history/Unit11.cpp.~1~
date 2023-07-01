@@ -1,0 +1,108 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Unit11.h"
+#include <array>
+#include <wchar.h>
+#include <vector>
+#include <algorithm>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+
+class Header {
+    public:
+           wchar_t naziv[26];
+           float verzija;
+           wchar_t autor[26];
+
+           Header() {
+               wcsncpy(naziv, L"anketa", 26);
+               wcsncpy(autor, L"imihic206", 26);
+               verzija = 1.0;
+           }
+
+};
+
+class Pitanje {
+    public:
+           wchar_t pitanje[255];
+           wchar_t slobodanOdgovor[2];
+           wchar_t ljestvicaOdgovor[2];
+           wchar_t daNeOdgovor[2];
+
+           Pitanje() = default;
+
+
+
+
+           Pitanje(wchar_t* _pitanje, wchar_t* _slobodanOdgovor, wchar_t* _ljestvicaOdgovor, wchar_t* _daNeOdgovor){
+
+                wcsncpy(pitanje, _pitanje, 255);
+                wcsncpy(slobodanOdgovor, _slobodanOdgovor, 2);
+                wcsncpy(ljestvicaOdgovor, _ljestvicaOdgovor, 2);
+                wcsncpy(daNeOdgovor, _daNeOdgovor, 2);
+           }
+
+           Pitanje(wchar_t* _pitanje, bool _slobodanOdgovor, bool _ljestvicaOdgovor, bool _daNeOdgovor){
+
+                wcsncpy(pitanje, _pitanje, 255);
+
+                if(_slobodanOdgovor){
+                    wcsncpy(slobodanOdgovor, L"DA", 2);
+                } else {
+                    wcsncpy(slobodanOdgovor, L"NE", 2);
+                }
+
+                if(_ljestvicaOdgovor){
+                    wcsncpy(ljestvicaOdgovor, L"DA", 2);
+                } else {
+                    wcsncpy(ljestvicaOdgovor, L"NE", 2);
+                }
+
+                if(_daNeOdgovor){
+                    wcsncpy(daNeOdgovor, L"DA", 2);
+                } else {
+                    wcsncpy(daNeOdgovor, L"NE", 2);
+                }
+
+           }
+
+
+
+};
+
+class Anketa {
+      public:
+           wchar_t nazivAnkete[60];
+           Pitanje pitanja[5];
+
+           Anketa() = default;
+
+           // parameterized constructor
+           Anketa(const Anketa& a1){
+               wcsncpy(nazivAnkete, a1.nazivAnkete, 26);
+               for(int i = 0; i < 5; i++){
+                       pitanja[i] = a1.pitanja[i];
+               }
+           }
+
+
+           Anketa(wchar_t* _naziv, Pitanje _pitanja[5]) {
+               wcsncpy(nazivAnkete, _naziv, 26);
+               for(int i = 0; i < 5; i++){
+                       pitanja[i] = _pitanja[i];
+               }
+
+           }
+
+           Anketa(wchar_t* _naziv, const std::array<Pitanje, 5> &_pitanja) {
+               wcsncpy(nazivAnkete, _naziv, 26);
+               for (int j = 0; j < _pitanja.size(); j++ ){
+                   pitanja[j] = _pitanja[j];
+               }
+           }
+};
+
+

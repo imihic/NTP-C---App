@@ -1,0 +1,24 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Poruka.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+
+
+Poruka(UnicodeString _kor, UnicodeString _sadrzaj) {
+	sifraAkcije = "PK01";
+	korisnik = _kor;
+	sadrzaj = _sadrzaj;
+	korisnikSaljeDatoteku = false;
+
+};
+Poruka(UnicodeString _kor, TMemoryStream _file){
+	sifraAkcije = "PK01";
+	korisnik = _kor;
+	sadrzaj = _file;
+	korisnikSaljeDatoteku = false;
+};
+

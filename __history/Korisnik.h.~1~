@@ -1,0 +1,20 @@
+//---------------------------------------------------------------------------
+
+#ifndef KorisnikH
+#define KorisnikH
+//---------------------------------------------------------------------------
+#endif
+
+
+// Singleton
+class Korisnik
+{
+private:
+  int shared_variable;
+  static Korisnik *instance;
+  Korisnik();
+public:
+  static TSharedObject *GetInstance();
+  int GetSharedVariable();
+  void SetSharedVariable(int value);
+};

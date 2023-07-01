@@ -1,0 +1,30 @@
+object PocetnaForm: TPocetnaForm
+  Left = 0
+  Top = 0
+  AlphaBlend = True
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'PocetnaForm'
+  ClientHeight = 186
+  ClientWidth = 304
+  Color = clBtnFace
+  TransparentColor = True
+  DefaultMonitor = dmMainForm
+  DoubleBuffered = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label: TLabel
+    Left = 0
+    Top = 0
+    Width = 25
+    Height = 13
+    Caption = 'Label'
+  end
+end

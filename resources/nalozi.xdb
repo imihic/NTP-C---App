@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://www.borland.com/schemas/delphi/10.0/XMLDataBinding">
+  <xs:element name="nalozi" type="naloziType"/>
+  <xs:complexType name="naloziType"><xs:annotation>
+      <xs:appinfo xdb:docElement="nalozi"/>
+    </xs:annotation>
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="nalog" type="nalogType" maxOccurs="unbounded"/>
+      <xs:element name="nalogUJP" type="nalogUJPType" maxOccurs="unbounded"/>
+    </sequence>
+  </xs:complexType>
+  <xs:complexType name="nalogType"><xs:annotation>
+      <xs:appinfo xdb:repeated="True"/>
+    </xs:annotation>
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="primatelj" type="xs:string"/>
+      <xs:element name="adresaPrimatelja" type="xs:string"/>
+      <xs:element name="mjestoPrimatelja" type="xs:string"/>
+      <xs:element name="drzavaPrimatelja" type="xs:string"/>
+      <xs:element name="racunPrimatelja" type="xs:string"/>
+      <xs:element name="iznos" type="xs:string"/>
+      <xs:element name="pozivNaBroj" type="xs:string"/>
+      <xs:element name="svrhaDoznake" type="xs:string"/>
+    </sequence>
+  </xs:complexType>
+  <xs:complexType name="nalogUJPType"><xs:annotation>
+      <xs:appinfo xdb:repeated="True"/>
+    </xs:annotation>
+    <sequence xmlns="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="primatelj" type="xs:string"/>
+      <xs:element name="adresaPrimatelja" type="xs:string"/>
+      <xs:element name="mjestoPrimatelja" type="xs:string"/>
+      <xs:element name="drzavaPrimatelja" type="xs:string"/>
+      <xs:element name="racunPrimatelja" type="xs:string"/>
+      <xs:element name="iznos" type="xs:string"/>
+      <xs:element name="vrstaPrihoda" type="xs:integer"><xs:annotation>
+          <xs:appinfo xdb:dataType="System::UnicodeString"/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="sifraOpcine" type="xs:integer"><xs:annotation>
+          <xs:appinfo xdb:dataType="System::UnicodeString"/>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="pozivNaBroj" type="xs:string"/>
+      <xs:element name="svrhaDoznake" type="xs:string"/>
+    </sequence>
+  </xs:complexType>
+</xs:schema>

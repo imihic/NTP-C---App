@@ -1,0 +1,25 @@
+//---------------------------------------------------------------------------
+
+#ifndef HomeH
+#define HomeH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm12 : public TForm
+{
+__published:	// IDE-managed Components
+	TListView *ListView1;
+	TListView *ListView2;
+	TCheckBox *CheckBox1;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TForm12(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm12 *Form12;
+//---------------------------------------------------------------------------
+#endif

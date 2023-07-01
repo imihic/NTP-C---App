@@ -1,0 +1,18 @@
+//---------------------------------------------------------------------------
+
+#ifndef PorukaH
+#define PorukaH
+//---------------------------------------------------------------------------
+#endif
+
+class Poruka {
+
+	private:
+
+		UnicodeString poruka;
+		TDateTime loginTime;
+		boolean isAdmin;
+	public:
+};
+
+

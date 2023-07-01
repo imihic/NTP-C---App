@@ -1,0 +1,482 @@
+object AnketeAdminForm: TAnketeAdminForm
+  Left = 0
+  Top = 0
+  AlphaBlend = True
+  AlphaBlendValue = 220
+  BorderStyle = bsNone
+  Caption = 'AnketeAdminForm'
+  ClientHeight = 878
+  ClientWidth = 1072
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object CategoryButtons1: TCategoryButtons
+    Left = -16
+    Top = 0
+    Width = 617
+    Height = 121
+    BevelEdges = []
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    BorderStyle = bsNone
+    ButtonFlow = cbfHorizontal
+    ButtonHeight = 96
+    ButtonWidth = 300
+    ButtonOptions = [boFullSize, boShowCaptions, boVerticalCategoryCaptions, boBoldCaptions]
+    Categories = <
+      item
+        Color = 15395839
+        Collapsed = False
+        Items = <
+          item
+            Caption = 'Kreiranje ankete'
+            ImageIndex = 0
+            ImageName = 'Create_96px'
+            OnClick = CategoryButtons1Categories0Items0Click
+          end
+          item
+            Caption = 'Slanje ankete'
+            ImageIndex = 1
+            ImageName = 'XML_96px'
+            OnClick = CategoryButtons1Categories0Items1Click
+          end>
+      end>
+    DragCursor = crHandPoint
+    RegularButtonColor = clWhite
+    SelectedButtonColor = 15132390
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 8
+    Top = 104
+    Width = 1064
+    Height = 688
+    Align = alCustom
+    Caption = 'Panel1'
+    ShowCaption = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 17
+      Top = 0
+      Width = 74
+      Height = 32
+      Caption = 'Anketa'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 2328053
+      Font.Height = -24
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Font.Quality = fqAntialiased
+      ParentFont = False
+      StyleElements = [seClient, seBorder]
+    end
+    object Label11: TLabel
+      Left = 17
+      Top = 215
+      Width = 72
+      Height = 25
+      Caption = 'Korisnici'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 2328053
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Font.Quality = fqAntialiased
+      ParentFont = False
+      StyleElements = [seClient, seBorder]
+    end
+    object ListView1: TListView
+      Left = 17
+      Top = 255
+      Width = 808
+      Height = 196
+      Columns = <
+        item
+          AutoSize = True
+          Caption = 'Redni broj'
+        end
+        item
+          AutoSize = True
+          Caption = 'Naziv korisnika'
+        end
+        item
+          AutoSize = True
+          Caption = 'Otvorio anketu?'
+        end
+        item
+          AutoSize = True
+          Caption = 'Rije'#353'io anketu?'
+        end
+        item
+          AutoSize = True
+          Caption = 'Odgovor'
+        end>
+      DoubleBuffered = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      MultiSelect = True
+      RowSelect = True
+      ParentDoubleBuffered = False
+      ParentFont = False
+      SmallImages = VirtualImageList1
+      StateImages = VirtualImageList1
+      TabOrder = 0
+      ViewStyle = vsReport
+    end
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 104
+    Width = 1072
+    Height = 774
+    Align = alCustom
+    Caption = 'Panel1'
+    ShowCaption = False
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 15
+      Top = 16
+      Width = 172
+      Height = 32
+      Caption = 'Kreiranje anketa'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 2328053
+      Font.Height = -24
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Font.Quality = fqAntialiased
+      ParentFont = False
+      StyleElements = [seClient, seBorder]
+    end
+    object Label3: TLabel
+      Left = 15
+      Top = 175
+      Width = 125
+      Height = 25
+      Caption = 'U'#269'itana anketa'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 2328053
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Font.Quality = fqAntialiased
+      ParentFont = False
+      StyleElements = [seClient, seBorder]
+    end
+    object Label5: TLabel
+      Left = 15
+      Top = 475
+      Width = 58
+      Height = 25
+      Caption = 'Pitanja'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 2328053
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Font.Quality = fqAntialiased
+      ParentFont = False
+      StyleElements = [seClient, seBorder]
+    end
+    object Button3: TButton
+      Left = 15
+      Top = 81
+      Width = 202
+      Height = 25
+      Caption = 'U'#269'itaj anketu iz binarne datoteke'
+      TabOrder = 0
+      OnClick = Button3Click
+    end
+    object btnKreirajNovuAnketu: TButton
+      Left = 24
+      Top = 426
+      Width = 162
+      Height = 25
+      Caption = 'Kreiraj novu anketu'
+      TabOrder = 1
+      OnClick = btnKreirajNovuAnketuClick
+    end
+    object btnAzurirajOznacenuAnketu: TButton
+      Left = 191
+      Top = 724
+      Width = 170
+      Height = 25
+      Caption = 'A'#382'uriraj ozna'#269'eno pitanje'
+      TabOrder = 2
+      OnClick = btnAzurirajOznacenuAnketuClick
+    end
+    object btnObrisiOznacenuAnketu: TButton
+      Left = 192
+      Top = 426
+      Width = 169
+      Height = 25
+      Caption = 'Obri'#353'i ozna'#269'enu anketu'
+      TabOrder = 3
+      OnClick = btnObrisiOznacenuAnketuClick
+    end
+    object btnObrisiSveAnkete: TButton
+      Left = 367
+      Top = 426
+      Width = 162
+      Height = 25
+      Caption = 'Obri'#353'i sve ankete'
+      TabOrder = 4
+      OnClick = btnObrisiSveAnketeClick
+    end
+    object ListView2: TListView
+      Left = 15
+      Top = 215
+      Width = 994
+      Height = 196
+      Columns = <
+        item
+          AutoSize = True
+          Caption = 'Redni broj'
+        end
+        item
+          AutoSize = True
+          Caption = 'Naslov ankete'
+        end>
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      MultiSelect = True
+      RowSelect = True
+      ParentFont = False
+      TabOrder = 5
+      ViewStyle = vsReport
+    end
+    object Button1: TButton
+      Left = 767
+      Top = 724
+      Width = 242
+      Height = 39
+      Caption = 'Spremi promjene'
+      TabOrder = 6
+      OnClick = Button1Click
+    end
+    object ListView3: TListView
+      Left = 15
+      Top = 514
+      Width = 994
+      Height = 196
+      Columns = <
+        item
+          AutoSize = True
+          Caption = 'Redni broj'
+        end
+        item
+          AutoSize = True
+          Caption = 'Pitanje'
+        end
+        item
+          AutoSize = True
+          Caption = 'Slobodan odgovor?'
+        end
+        item
+          AutoSize = True
+          Caption = 'Odgovor ljestvica ocjena?'
+        end
+        item
+          AutoSize = True
+          Caption = 'Odgovor da/ne?'
+        end>
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      MultiSelect = True
+      RowSelect = True
+      ParentFont = False
+      TabOrder = 7
+      ViewStyle = vsReport
+    end
+  end
+  object VirtualImageList1: TVirtualImageList
+    DisabledGrayscale = False
+    DisabledSuffix = '_Disabled'
+    Images = <
+      item
+        CollectionIndex = 0
+        CollectionName = 'Cancel_48px'
+        Disabled = False
+        Name = 'Cancel_48px'
+      end
+      item
+        CollectionIndex = 1
+        CollectionName = 'Ok_48px'
+        Disabled = False
+        Name = 'Ok_48px'
+      end>
+    ImageCollection = ImageCollection1
+    Left = 952
+    Top = 7
+  end
+  object ImageCollection1: TImageCollection
+    Images = <
+      item
+        Name = 'Cancel_48px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              8700000006624B474400FF00FF00FFA0BDA793000005DE494441545809ED595D
+              4C1C55143E6766CA020B88A06DE2B36803288D45B0822D7F35D2481FAC3EE8AB
+              89D1C4EA835694B66A8412D392686C6334C6E73EB436B134D614165AAD965F53
+              DA821A4D8CFA526D4809BFEEB233D773666796995D86BDFB53E081CD3973CF3D
+              F79C73CF37F7DEB9736701367E1B7720AD3B8069795BCEA2AE4E9BC1D96A1595
+              2603A182829602C266AB395218F80FE927483FA60BA337DFF00FE1C58BE14863
+              EA578A99BAF37CFD63D53A8A1711C53E8A52449C0C4D0A80D30A882FFD81E1E1
+              641C9DB62901986FA8AC3250F99002D513A74F020228B0D5DF3F389A6C304CC6
+              41B46CCF9D9FD78E09102F939F429C49D251C0A7B90B6A2B5EB9B2201B581AC0
+              4C637529823845814B89EF1C09B86168FA730517467F91E9440AC04C43558382
+              F035CDD93C99A019B09932105B0A7A072F278A95108035DF7B29503EF16AD234
+              2AD0E8EF191A59A9D315014CD7573EA828CA0F14A09878F549C02D5DC59ABB7A
+              067FF3EADC73214E36571750F2DDE4584CBC368470AF6A8873B76A6A3C47DF13
+              4076C8E8A4AC4B88D79A1EC8C90EB57B25B1EC149ADB5D55290C18202795783D
+              900E8AA8CCEB19BE1A9BCCB22340C91F25C3F5923CA5022A18C039B1ECE23800
+              73F5D5DBC9A29E589E1405D4F20A697BD3967CA41D4C436C9ADDFDE83653745C
+              E2000845BCE2684F2CAA2AF80E7742F6479F83D6F24C42FB4D2DFB4C5BDFA123
+              00E49BD061C9006966C4E5864BED00A2F97EDF5CA8E826E90A89131325E03BD8
+              01DACE8688AD1010FCE42884BBCF44EA31574E3EEBB5030018E9367C2900C1CE
+              C300BA1E63E9599DF417CDDD87A7C643B685620B5CCE85EFAEA5522E793254B7
+              9683565B07D11F25E6DB7F00B4C6A7A22A5BD09A9A216BFF9BD1E459AF3D510F
+              CAD6321665B978762A7787D3D8054018CA2E676322591F1F8360C741807078C9
+              94E6B6EFEDF781EFB6AD64D9D7FA1E00B5D93AF609B6B781317E2DAA9211141D
+              EBC0F1D31C329D35C436675D460E7FD7679AF9DADA01342B1C8D843955CC1600
+              53269D553501078F1C82F0F7FD5195AC400726578E568F96BBC012406155E40B
+              1304CD7F5E0F2E10AFBF450B8BE2652879CE88564F099736BBA61025BFD96E48
+              B6E4BBC97795A786CB3783C95B71B758A559B80100E499DA142F511086111F81
+              740C906DE21B93D2B8DE8B6201D00825152CCE180B8B5C4F9AA8018D84D91655
+              6446880530934E587EDAC42D583B2001E036B6B155299502A69D7E6E0002FF75
+              3626236FDAFB6CFCD3863728C3B149650204822B4717008142EA1C1A0BCC4C3E
+              6693E2C5CC7B44B03D669F4813049DCB5D39BA00D0E4BD1E9B5CA2BA67F2D673
+              9E172D2F5E06148D950E0881AE1CDD00142310ED444250CB2A20EBD53708B763
+              EDF3D3E658BB6B933241747500505B342C83A05153CA1E8EAA6404FEAAE7B473
+              01C8D36E0F50E314B114E913D760F1DC99255B7AA5087ED006E1C0B74B3A4B0A
+              F79E077E75708EC422BDF41913D72D0BA96232FF9E8561A7A50B009EFF3D481B
+              F149A7C18A32EDBEA1E35DB0D8FD55E4F5A0835E0F2EF77BBA982341538B412C
+              9E3D0DA1135D919DDAD3C3DD408376D2F926CAAD8EB1E72A001F68E84C3012A9
+              495EE9254D2D7D08F41B63520E7CA0D1F9CE3BA754624F41C7CA47628F957100
+              38CE6C63F537746B9A595E47DC9D1718DA1B9B8F6B0AD98DA8887749D689D70B
+              F1A19E738ACB675900FC358C9EB79FC559AF99429C889D3A762ACB02E0C65CDD
+              4FC727F113CB6BCA08A3FEACDBAD5E397802A07F4FFE330CF102394E12AF0DF1
+              A745C4E7F9E9E8958027007628E81FF95511C61E926788579BA651853D2B7D17
+              E5845604C006B97D2343C2107C90FE9BEBABC47F09C01DBC1613F597100007C8
+              EF1F1EA72F28BB48BE4A7C6789E6BC2AB49DF981C109998EA40070A09C0B437F
+              F8E7D5C769A73E4EF53071A669918EB41FFBC3B9B5397D3FFE291B1C650D9D76
+              334F5696A3AEF0D7EBA7499F520CF2B3895E48E02CA0F24E7EEFC0CFB652B64C
+              AB73FE8A6DE8F8525A7FB31AF8452AFF4EDA00D302600759F68F6E802DD45E48
+              CC3405026F526719FFA39B836FF0C61D48E30EFC0F6D26F6AC2F00C7AA000000
+              0049454E44AE426082}
+          end>
+      end
+      item
+        Name = 'Ok_48px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              8700000006624B474400FF00FF00FFA0BDA793000005D7494441545809ED595D
+              6C1455143E770728FF96026D039407142B6DB5F48736FC44402B4917BADBED52
+              A2BE1913A30FFA64427CE1C584187D31D1181343E293054B7F17CA0BC43E6852
+              0A35684B0B821A4505FA0395A202DDDDEB77B63BDDB9BB33DB996EBBE5A19B73
+              E6FE9D73EE77EE9C7B66E70ED1FC6F7E05525A019192765479CF377B16ACBC93
+              55197685AB488A6212B20043D9E01809795B48D18FF11F2077F69F27FEEEEEDC
+              DB198C094CAF969203EE566FA58BE87580F263FA2CB0131A91529C7449712CE0
+              6FBEE044D1283B2D070EB4D45660353F9042EE351A4BA17E4E121D3EED6BED71
+              6A433851A809D42C0D07B58FA0F426F4B0F8B8CE1C8560F7B3C5E30B0F371E6A
+              FCCFAE59E8D813F5B67A0B8252344281E3DB9ED2F4A4FA4448AB0F1C6CBA6247
+              1D78A616AB69F6BD80706983E472703A6814215A13A86BF976AAC9A67480E31D
+              46CE825780D349F790AD5EECF0B65F4C366952073C6D9EFC70D8F51D0CAC06CF
+              050D5148DB79EA60D335ABC92D1DA8EEA85EA93DCC60EF375B29A7A9FF27972B
+              5CDEEE6D1F339BCF3293688F161D85C25C8307047A1A51F03E57CCD8F40EB8DB
+              3CE5AEB0AB0B0A1AF871A05098A8BCC3D77A291E8CE91DD042DA87104C2BF855
+              CB16634A4BD2B0D28C294120C181FD2DB56548997B132467B1A3684336BD5355
+              492F156EB29C451055B95B6AB7C60BB8E23BD07E0B9C367A76430EF9CBB69010
+              82766EDE48FB8A9EB49A5B684409D81407907932E0A9DFCAC24CF7E7E7AEA1DA
+              D26722E075DB159BD6D39A154BF5A652E2FF92BFFEEBFA45C64EC501A4CD5D18
+              CC04CF3A3D97974D2F571692E6C29245670B62AB7ED5D54BC363FF467B128AD5
+              0F1604B71B7B1507606AB77170B6EAC57939E42B9D081B7D8E08F8F3BDF4CBE0
+              5DBDCBB4C4FEDC43869FE28024DA6A189B952A838F0F1BBBE0A380148C8A0378
+              939AD5079715F886F37D53AE7C143CE1E549C1A83A2045F6A4A08D4AD6B22536
+              A42644B6AC5B4B9E1275C386C2921A2FF4D3CF83772684EC5C85CC318AA90E10
+              2D370E26AB73CE7EBBAA82380D2693E3B1E2BC5C3AB4ADC074C35EBD35CC224E
+              58F957BCC0A8894D2CB00F8C5DA675CED53B9ECA8B8CD595F1AA4AFAF1C660A4
+              1D7F61F0B5A5F94AAAE4983F8EB071B4F2F186A36DE50E00FC58B4DFB2588B1C
+              CDB95A17E00790B7640B15AC5BA3774D9685EBB3C91B079EC3A6E9E2005D7712
+              36931623957B916BF4A238804D6CBE8C51612E8690A33957F32A729B997379FD
+              B642E2D5E636F3D68DB974B0BC805C78C2729B99758E23550EDC1CE2E6F4580A
+              05A3EA8014B6DE43395773E660403A0ABE131C2A0C9CD91BD9B0FA2811CB9EE8
+              EEA36BB71D6CD8987AAC26A4825171007BA0372699BCC6F17BF2623F7148E892
+              EC84A7249FBC60C3C247649A7A0652073F31918251710039F6DC848CBDEB959B
+              C3D480473FAFAEAEC121C38EE8ED60384C0D1C367FA51036BA3194784F398B62
+              921407828B1F746164146C9B7833726830D07825EEE36C733DD5B089191EC908
+              6917624D22C58133EE330F11460D46013B758E6B06CA807579AE73DF0C8267D3
+              0D38F47AC4159D1507B813AF6EC7B874CA0CF4C4F9CBC4C099B9CE7D4EED2491
+              9766D8B0E0892A380BEA406F35D831F1DB15E181D2F7A792ED1CDB3151089CF2
+              B57AE2FB9527B13E8803A523D82CFBD0C64B10AE0EA8EF8F1907CEB3E34D818E
+              70259E1342880522A761427ECEF5C7843F353B91606CA60EF0C0FDBBABDE45F9
+              3D78AEA92794F1F0B015084B073A5FFBF2014EC45E85E20878AE888F165FE1EC
+              6805C0D20156C071DE55946EF01838DDC487BBEE64E7A20C28A9032C809DDF2D
+              B4D076D46F80D345BF6B426E8FECC529669CD201D60F780297E1C46ED42F8167
+              9B7A7016FA7C5B6D5BBF9D896C39C086E0C4AF4BC617EEC083E313B483E01925
+              D81D077F7C7F34735787BFF937BBC6855D41A3DCFE665F9110F228FA0E80A765
+              037A3A4949D48E3F92EF9DAE6B19D03BED96294D1E39C596E20D4CEEC7845960
+              2714F9CC8A97A82FA6F375529F2825077423161FBA73309E09661A05D05BF8EE
+              35E31FBAD9F83CCFAF400A2BF03F348CF0691921300D0000000049454E44AE42
+              6082}
+          end>
+      end>
+    Left = 840
+    Top = 7
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\imihic\Doc' +
+      'uments\eBanking\eBanking.mdb;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 680
+    Top = 8
+  end
+  object tKorisnici: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    LockType = ltReadOnly
+    TableName = 'KORISNIK_TABLE'
+    Left = 752
+  end
+  object FileOpenDialog1: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <>
+    Options = []
+    Left = 744
+    Top = 40
+  end
+  object PonudeniOdgovoriDialog: TTaskDialog
+    Buttons = <>
+    MainIcon = 0
+    RadioButtons = <>
+    Text = 'Ukoliko va'#353'e pitanje ima '
+    Title = 'Kreiranje ankete'
+    Left = 832
+    Top = 39
+  end
+end

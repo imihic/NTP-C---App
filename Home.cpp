@@ -1,0 +1,64 @@
+// ---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Home.h"
+// ---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TSocketServer *SocketServer;
+TIdContextList *Connections;
+
+// ---------------------------------------------------------------------------
+__fastcall TSocketServer::TSocketServer(TComponent* Owner) : TForm(Owner) {
+}
+// ---------------------------------------------------------------------------
+
+void __fastcall TSocketServer::getData(TObject *Sender) {
+	FDStoredProc1->Open();
+	FDStoredProc1->First();
+	int i=0;
+
+	while (!FDStoredProc1->Eof) {
+		ListView3->Items->Add();
+		ListView3->Items->Item[i]->Caption = FDStoredProc1->FieldByName("id")->AsString.c_str();
+		ListView3->Items->Item[i]->SubItems->Add
+			(FDStoredProc1->FieldByName("podnositelj")->AsString.c_str());
+		ListView3->Items->Item[i]->SubItems->Add
+			(FDStoredProc1->FieldByName("status")->AsString.c_str());
+		ListView3->Items->Item[i]->SubItems->Add
+			(FDStoredProc1->FieldByName("povratna_ocjena")->AsString.c_str());
+		ListView3->Items->Item[i]->SubItems->Add
+			(FDStoredProc1->FieldByName("rjesavatelj")->AsString.c_str());
+		i++;
+		FDStoredProc1->Next();
+	}
+}
+// ---------------------------------------------------------------------------
+void __fastcall TSocketServer::IdTCPServer1Execute(TIdContext *AContext)
+{
+	UnicodeString msg = AContext->Connection->IOHandler->ReadLn();
+	if (msg.Pos("username: ") == 1) {
+
+		//AContext->Data = new TStringList();
+		//AnsiString username = msg.SubString(10, msg.Length() - 9);
+		//TStringList *data = (TStringList*)AContext->Data;
+		//data->Add("username: " + username);
+		//moramo sinkronizirati worker thread s main threadom
+		AContext->Connection->Socket->WriteLn("Hello from server my brotha!");
+	}
+	if (msg.Pos("test") == 1) {
+        AContext->Connection->Socket->WriteLn("Tested!");
+    }
+	for(int i = 0; i < 5; i++){
+			AContext->Connection->Socket->WriteLn("Loop message test.");
+			Sleep(100);
+			i++;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+
+

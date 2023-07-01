@@ -1,0 +1,16 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Korisnik.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+UnicodeString getUserName(){
+	return this->userName;
+}
+void setUserName(UnicodeString username);
+		TDateTime getLoginTime();
+		void setLoginTime(TDateTime time);
+		bool getIsAdmin();
+		void setIsAdmin(bool boolean);

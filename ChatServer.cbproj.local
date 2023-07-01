@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.950,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.621,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.200,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.571,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.409,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.607,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Home.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Statistika.cpp=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.519,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\ChatServer.cbproj=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\ChatServer.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\DBWorker.h=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.918,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2.cbproj=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\ChatServer.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.862,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.607,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.dfm=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Home.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.764,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.096,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.482,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.810,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.607,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.h=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Home.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.234,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\DBWorker.cpp=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.373,=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Statistika.dfm=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.700,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Statistika.h=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Unit12.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.910,C:\Users\imihic\Documents\Embarcadero\Studio\Projects\Project2PCH1.h=C:\Users\imihic\Documents\Embarcadero\Studio\Projects\ChatServerPCH1.h</Transaction>
+  </Transactions>
+</BorlandProject>

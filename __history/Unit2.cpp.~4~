@@ -1,0 +1,160 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <registry.hpp>
+#pragma hdrstop
+
+#include "Unit2.h"
+#include "Unit3.h"
+#include "Unit4.h"
+#include "Unit5.h"
+#include <chrono>
+#include <thread>
+#include "Unit1.h"
+#include "Unit7.h"
+#include "Unit8.h"
+#include "Unit9.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TMainForm *MainForm;
+//---------------------------------------------------------------------------
+__fastcall TMainForm::TMainForm(TComponent* Owner)
+	: TForm(Owner)
+{
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::Image1Click(TObject *Sender)
+{
+     if(SplitView1->Opened) SplitView1->Close();
+     else SplitView1->Open();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::FormResize(TObject *Sender)
+{
+     if(MainForm->Width<640) SplitView1->Close();
+     else SplitView1->Open();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items0Click(TObject *Sender)
+
+{
+       SettingsForm->Hide();
+       NaloziForm->Hide();
+       PrimateljiForm->Hide();
+       //TPocetnaForm *PocetnaForm;
+       //PocetnaForm         = new TPocetnaForm(Panel2);
+       PocetnaForm->Parent = Panel2;
+       PocetnaForm->Align  = alClient;
+       PocetnaForm->Show();
+       //delete PocetnaForm;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items8Click(TObject *Sender)
+
+{    PocetnaForm->Hide();
+     NaloziForm->Hide();
+     PrimateljiForm->Hide();
+     //TSettingsForm *SettingsForm;
+     //SettingsForm         = new TSettingsForm(Panel2);
+     SettingsForm->Parent = Panel2;
+     SettingsForm->Align  = alClient;
+     SettingsForm->Show();
+     //delete SettingsForm;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items1Click(TObject *Sender)
+
+{    PocetnaForm->Hide();
+     SettingsForm->Hide();
+     PrimateljiForm->Hide();
+     //TNaloziForm *NaloziForm;
+     //NaloziForm         = new TNaloziForm(Panel2);
+     NaloziForm->Parent = Panel2;
+     NaloziForm->Align  = alClient;
+     NaloziForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items11Click(TObject *Sender)
+
+{
+     Close();
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items2Click(TObject *Sender)
+
+{
+     PocetnaForm->Hide();
+     SettingsForm->Hide();
+     NaloziForm->Hide();
+
+     PrimateljiForm->Parent = Panel2;
+     PrimateljiForm->Align  = alClient;
+     PrimateljiForm->Show();
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TMainForm::CategoryButtons1Categories0Items10Click(TObject *Sender)
+
+{
+     PodrskaForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TMainForm::FormCreate(TObject *Sender)
+{
+     TRegistry *Reg = new TRegistry;
+     Reg->RootKey = HKEY_CURRENT_USER;
+     UnicodeString key = "Software\\C++Builder\\eBankingProject";
+	 bool isAdmin = false;
+
+
+     if(Reg->OpenKey(key, true)) {
+         UnicodeString loggedInUserName = Reg->ReadString("user");
+         TDateTime loggedInAt = Reg->ReadDateTime("lastLogin");
+         isAdmin = Reg->ReadBool("admin");
+         Label1->Caption = "Dobrodošao, " + loggedInUserName + "!";
+     }
+
+     if(isAdmin) {
+         CategoryButtons1->Visible = false;
+         CategoryButtons2->Visible = true;
+     }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::CategoryButtons2Categories0Items7Click(TObject *Sender)
+
+{
+     Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TMainForm::CategoryButtons2Categories0Items1Click(TObject *Sender)
+
+{
+     //PocetnaForm->Hide();
+     //SettingsForm->Hide();
+     //NaloziForm->Hide();
+
+     AnketeAdminForm->Parent = Panel2;
+     AnketeAdminForm->Align  = alClient;
+     AnketeAdminForm->Show();
+}
+//---------------------------------------------------------------------------
+
